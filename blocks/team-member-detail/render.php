@@ -13,6 +13,38 @@ if ($member) {
     $profile_image = get_field('profile_image', $member);
     $description = get_field('description', $member);
 
+    //show all posts where member is Reviewer
+    $member_posts = [];
+    $args = array(
+        'post_type'      => 'post',
+        'post_status'    => 'publish',
+        'posts_per_page' => 5,
+        'meta_query'     => array(
+            array(
+                'key'     => 'reviewer',
+                'value'   => $member,
+                'compare' => '=',
+            ),
+        ),
+        'orderby'        => 'date',
+        'order'          => 'DESC',
+    );
+
+    $query = new WP_Query( $args );
+    if ( $query->have_posts() ) {
+        while ( $query->have_posts() ){
+            $query->the_post();
+            $post_title = get_the_title();
+            $post_link = get_the_permalink();
+
+            $member_posts[] = [
+                'title' => $post_title,
+                'link' => $post_link,
+            ];
+        }
+        wp_reset_postdata();
+    }
+
 ?>
     <section id="<?php echo esc_attr($block_id); ?>" class="<?php echo esc_attr($block_classes); ?>">
         <div class="py-8 px-4">
@@ -55,6 +87,15 @@ if ($member) {
             </div>
             <?php if ($description) { ?>
                 <div class="mt-8"><?php echo $description; ?></div>
+            <?php } ?>
+            <?php if ($member_posts) { ?>
+                <div class="mt-2">
+                    <ul>
+                        <?php foreach($member_posts as $mp){ ?>
+                            <li><a href="<?php echo esc_url($mp['link']); ?>; ?>"><?php echo esc_html($mp['title']); ?></a></li>
+                        <?php } ?>
+                    </ul>
+                </div>
             <?php } ?>
         </div>
     </section>
