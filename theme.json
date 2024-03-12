@@ -1,0 +1,40 @@
+{
+	"version": 2,
+	"settings": {
+		"appearanceTools": false,
+        "color": {
+            "custom": true,
+            "customGradient": false,
+            "customDuotone": false,
+            "background": false,
+            "text": true,
+            "link": false
+        },
+		"typography": {
+			"dropCap": false,
+            "customFontSize": false,
+            "fontSizes": [],
+            "fontWeight": false,
+            "textTransform": false,
+            "letterSpacing": false,
+            "fontStyle": false
+		},
+		"layout": {
+			"contentSize": "1200px",
+			"wideSize": "1200px"
+		}
+	},
+	"styles": {
+        "typography": {
+            "fontFamily": "var(--wp--preset--font-family--system-fonts)"
+        }
+	},
+    "blocks": {
+        "core/image": {
+          "lightbox": {
+            "allowEditing": false,
+            "enabled": false
+          }
+        }
+      }
+}

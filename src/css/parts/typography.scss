@@ -1,0 +1,156 @@
+// Heading - mixins
+@mixin h1-xl {
+    @apply text-[2.25rem] md:text-[3rem] leading-tighter font-semibold break-words md:break-normal;
+}
+@mixin h1 {
+    @apply text-[1.75rem] md:text-[2.5rem] leading-tighter font-semibold break-words md:break-normal;
+}
+@mixin h2 {
+    @apply text-[1.5rem] md:text-[2rem] leading-tighter font-medium break-words md:break-normal;
+}
+@mixin h3 {
+    @apply text-[1.25rem] leading-tighter font-semibold break-words md:break-normal;
+}
+@mixin h4 {
+    @apply text-[1.125rem] md:text-[1rem] leading-tighter font-semibold break-words md:break-normal;
+}
+@mixin h5 {
+    @apply text-[1.125rem] md:text-[1rem] leading-tighter font-semibold break-words md:break-normal;
+}
+@mixin h6 {
+    @apply text-[1.125rem] md:text-[1rem] leading-tighter font-semibold break-words md:break-normal;
+}
+
+// Base style
+.like-italic {
+    @apply italic;
+}
+.p-sm {
+    @apply text-[0.875rem] leading-[1.35];
+}
+.p {
+    @apply text-[1rem] leading-[1.35];
+}
+.p-lg {
+    @apply text-[1rem] md:text-[1.125rem] leading-[1.35];
+}
+.p-xl {
+    @apply text-[1.125rem] md:text-[1.25rem] leading-[1.35];
+}
+.link {
+    @apply underline text-primary hover:text-primary transition hover:no-underline group-hover:no-underline group-hover:text-primary;
+}
+
+// Wysiwyg style
+.editor-styles-wrapper, .entry-content {
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply m-0;
+        a {
+            @extend .link;
+        }
+    }
+
+    h1 {
+        @include h1;
+        @apply mb-2.5 md:mb-5 last:mb-0;
+    }
+    h2 {
+        @include h2;
+        @apply mb-4 md:mb-6 last:mb-0;
+    }
+    h3 {
+        @include h3;
+        @apply mb-2.5 md:mb-[15px] last:mb-0;
+    }
+    h4 {
+        @include h4;
+        @apply mb-3 md:mb-4 last:mb-0;
+    }
+    h5 {
+        @include h5;
+        @apply mb-1.5 md:mb-2 last:mb-0;
+    }
+    h6 {
+        @include h6;
+        @apply mb-1.5 md:mb-2 last:mb-0;
+    }
+
+    p {
+        @extend .p;
+        @apply mb-[20px] md:mb-[30px] last:mb-0;
+    }
+
+    p+p {
+        @apply -mt-2 md:-mt-3;
+    }
+
+    ul {
+        @apply p-0 pl-5 ml-0 mb-4 md:mb-6 last:mb-0 list-outside list-disc;
+        li {
+            @apply relative text-base;
+        }
+    }
+
+    ol {
+        @apply p-0 pl-5 ml-0 mb-4 md:mb-6 last:mb-0 list-outside list-decimal;
+        li {
+            @apply relative text-base;
+        }
+    }
+
+    li {
+        @extend .p-lg;
+        @apply mb-2 last:mb-0;
+
+        li {
+            @apply ml-6 md:ml-8 first:mt-3;
+        }
+    }
+
+    p > a, li > a, .wp-block-table a, p strong > a, p b > a, p i > a {
+        @extend .link;
+    }
+
+    blockquote {
+        @apply text-base md:text-lg italic leading-relaxed md:leading-relaxed;
+    }
+
+    figcaption {
+        @extend .p-sm;
+        @apply mt-2.5 text-black text-center;
+    }
+
+    sup {
+        @apply text-black font-semibold text-[0.75rem];
+    }
+
+    blockquote{
+        cite{
+            @apply text-sm;
+        }
+    }
+
+    // Custom styles
+    .is-style-h1 {
+        @include h1;
+    }
+    .is-style-h2 {
+        @include h2;
+    }
+    .is-style-h3 {
+        @include h3;
+    }
+    .is-style-h4 {
+        @include h4;
+    }
+    .is-style-h5 {
+        @include h5;
+    }
+    .is-style-h6 {
+        @include h6;
+    }
+    .is-style-xl {
+        @extend .p-xl;
+    }
+}

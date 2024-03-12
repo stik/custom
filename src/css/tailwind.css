@@ -1,0 +1,239 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white antialiased;
+}
+
+a {
+  @apply transition-all;
+}
+
+.like-italic {
+  @apply italic;
+}
+
+.p-sm, .editor-styles-wrapper figcaption, .entry-content figcaption {
+  @apply text-[0.875rem] leading-[1.35];
+}
+
+.p, .editor-styles-wrapper p, .entry-content p {
+  @apply text-[1rem] leading-[1.35];
+}
+
+.p-lg, .editor-styles-wrapper li, .entry-content li {
+  @apply text-[1rem] md:text-[1.125rem] leading-[1.35];
+}
+
+.p-xl, .editor-styles-wrapper .is-style-xl, .entry-content .is-style-xl {
+  @apply text-[1.125rem] md:text-[1.25rem] leading-[1.35];
+}
+
+.link, .editor-styles-wrapper p > a, .editor-styles-wrapper li > a, .editor-styles-wrapper .wp-block-table a, .editor-styles-wrapper p strong > a, .editor-styles-wrapper p b > a, .editor-styles-wrapper p i > a, .entry-content p > a, .entry-content li > a, .entry-content .wp-block-table a, .entry-content p strong > a, .entry-content p b > a, .entry-content p i > a, .editor-styles-wrapper h1 a, .editor-styles-wrapper h2 a, .editor-styles-wrapper h3 a, .editor-styles-wrapper h4 a, .editor-styles-wrapper h5 a, .editor-styles-wrapper h6 a, .entry-content h1 a, .entry-content h2 a, .entry-content h3 a, .entry-content h4 a, .entry-content h5 a, .entry-content h6 a {
+  @apply underline text-primary hover:text-primary transition hover:no-underline group-hover:no-underline group-hover:text-primary;
+}
+
+.editor-styles-wrapper h1, .editor-styles-wrapper h2, .editor-styles-wrapper h3, .editor-styles-wrapper h4, .editor-styles-wrapper h5, .editor-styles-wrapper h6, .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 {
+  @apply m-0;
+}
+.editor-styles-wrapper h1, .entry-content h1 {
+  @apply text-[1.75rem] md:text-[2.5rem] leading-tighter font-semibold break-words md:break-normal;
+  @apply mb-2.5 md:mb-5 last:mb-0;
+}
+.editor-styles-wrapper h2, .entry-content h2 {
+  @apply text-[1.5rem] md:text-[2rem] leading-tighter font-medium break-words md:break-normal;
+  @apply mb-4 md:mb-6 last:mb-0;
+}
+.editor-styles-wrapper h3, .entry-content h3 {
+  @apply text-[1.25rem] leading-tighter font-semibold break-words md:break-normal;
+  @apply mb-2.5 md:mb-[15px] last:mb-0;
+}
+.editor-styles-wrapper h4, .entry-content h4 {
+  @apply text-[1.125rem] md:text-[1rem] leading-tighter font-semibold break-words md:break-normal;
+  @apply mb-3 md:mb-4 last:mb-0;
+}
+.editor-styles-wrapper h5, .entry-content h5 {
+  @apply text-[1.125rem] md:text-[1rem] leading-tighter font-semibold break-words md:break-normal;
+  @apply mb-1.5 md:mb-2 last:mb-0;
+}
+.editor-styles-wrapper h6, .entry-content h6 {
+  @apply text-[1.125rem] md:text-[1rem] leading-tighter font-semibold break-words md:break-normal;
+  @apply mb-1.5 md:mb-2 last:mb-0;
+}
+.editor-styles-wrapper p, .entry-content p {
+  @apply mb-[20px] md:mb-[30px] last:mb-0;
+}
+.editor-styles-wrapper p + p, .entry-content p + p {
+  @apply -mt-2 md:-mt-3;
+}
+.editor-styles-wrapper ul, .entry-content ul {
+  @apply p-0 pl-5 ml-0 mb-4 md:mb-6 last:mb-0 list-outside list-disc;
+}
+.editor-styles-wrapper ul li, .entry-content ul li {
+  @apply relative text-base;
+}
+.editor-styles-wrapper ol, .entry-content ol {
+  @apply p-0 pl-5 ml-0 mb-4 md:mb-6 last:mb-0 list-outside list-decimal;
+}
+.editor-styles-wrapper ol li, .entry-content ol li {
+  @apply relative text-base;
+}
+.editor-styles-wrapper li, .entry-content li {
+  @apply mb-2 last:mb-0;
+}
+.editor-styles-wrapper li li, .entry-content li li {
+  @apply ml-6 md:ml-8 first:mt-3;
+}
+.editor-styles-wrapper blockquote, .entry-content blockquote {
+  @apply text-base md:text-lg italic leading-relaxed md:leading-relaxed;
+}
+.editor-styles-wrapper figcaption, .entry-content figcaption {
+  @apply mt-2.5 text-black text-center;
+}
+.editor-styles-wrapper sup, .entry-content sup {
+  @apply text-black font-semibold text-[0.75rem];
+}
+.editor-styles-wrapper blockquote cite, .entry-content blockquote cite {
+  @apply text-sm;
+}
+.editor-styles-wrapper .is-style-h1, .entry-content .is-style-h1 {
+  @apply text-[1.75rem] md:text-[2.5rem] leading-tighter font-semibold break-words md:break-normal;
+}
+.editor-styles-wrapper .is-style-h2, .entry-content .is-style-h2 {
+  @apply text-[1.5rem] md:text-[2rem] leading-tighter font-medium break-words md:break-normal;
+}
+.editor-styles-wrapper .is-style-h3, .entry-content .is-style-h3 {
+  @apply text-[1.25rem] leading-tighter font-semibold break-words md:break-normal;
+}
+.editor-styles-wrapper .is-style-h4, .entry-content .is-style-h4 {
+  @apply text-[1.125rem] md:text-[1rem] leading-tighter font-semibold break-words md:break-normal;
+}
+.editor-styles-wrapper .is-style-h5, .entry-content .is-style-h5 {
+  @apply text-[1.125rem] md:text-[1rem] leading-tighter font-semibold break-words md:break-normal;
+}
+.editor-styles-wrapper .is-style-h6, .entry-content .is-style-h6 {
+  @apply text-[1.125rem] md:text-[1rem] leading-tighter font-semibold break-words md:break-normal;
+}
+.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper, .entry-content .edit-post-visual-editor__post-title-wrapper {
+  @apply mb-12;
+}
+.editor-styles-wrapper .has-text-align-center, .entry-content .has-text-align-center {
+  @apply text-center;
+}
+.editor-styles-wrapper .has-text-align-right, .entry-content .has-text-align-right {
+  @apply text-right;
+}
+.editor-styles-wrapper .aligncenter, .entry-content .aligncenter {
+  @apply mx-auto;
+}
+.editor-styles-wrapper .aligncenter img, .entry-content .aligncenter img {
+  @apply mx-auto;
+}
+.editor-styles-wrapper .is-vertically-aligned-center, .entry-content .is-vertically-aligned-center {
+  @apply flex flex-col justify-center;
+}
+.editor-styles-wrapper .wp-block-video video, .entry-content .wp-block-video video {
+  @apply w-full;
+}
+.editor-styles-wrapper .wp-block-code, .entry-content .wp-block-code {
+  @apply border rounded bg-white border-black p-4;
+}
+.editor-styles-wrapper .wp-block-separator, .entry-content .wp-block-separator {
+  @apply w-full max-w-sm mx-auto my-10 md:my-12 border-t border-black;
+}
+.editor-styles-wrapper .wp-block-separator.is-style-wide, .entry-content .wp-block-separator.is-style-wide {
+  @apply w-full max-w-none;
+}
+.editor-styles-wrapper .wp-block-separator.is-style-dots, .entry-content .wp-block-separator.is-style-dots {
+  @apply border-none text-black h-auto bg-none text-center;
+}
+.editor-styles-wrapper .wp-block-separator.is-style-dots:before, .entry-content .wp-block-separator.is-style-dots:before {
+  @apply content-["..."] leading-[2rem] text-current pl-8 font-serif text-2xl;
+}
+.editor-styles-wrapper .wp-block-image a, .entry-content .wp-block-image a {
+  @apply block no-underline;
+}
+.editor-styles-wrapper figure, .editor-styles-wrapper .wp-block-image, .entry-content figure, .entry-content .wp-block-image {
+  @apply my-8 first:mt-0 last:mb-0;
+}
+.editor-styles-wrapper .wp-block-image.is-style-circle-mask img,
+.editor-styles-wrapper .wp-block-image.is-style-rounded img, .entry-content .wp-block-image.is-style-circle-mask img,
+.entry-content .wp-block-image.is-style-rounded img {
+  @apply rounded-full;
+}
+.editor-styles-wrapper .wp-block-audio, .entry-content .wp-block-audio {
+  @apply box-border;
+}
+.editor-styles-wrapper .wp-block-audio figcaption, .entry-content .wp-block-audio figcaption {
+  @apply mb-4 mt-2;
+}
+.editor-styles-wrapper .wp-block-audio audio, .entry-content .wp-block-audio audio {
+  @apply min-w-80 w-full;
+}
+.editor-styles-wrapper iframe, .entry-content iframe {
+  @apply w-full;
+}
+.editor-styles-wrapper .wp-block-table, .entry-content .wp-block-table {
+  @apply my-5 rounded-sm overflow-x-auto bg-gray-100 py-6 px-4 relative whitespace-nowrap;
+}
+.editor-styles-wrapper .wp-block-table figcaption, .entry-content .wp-block-table figcaption {
+  @apply md:hidden;
+}
+.editor-styles-wrapper .wp-block-table table.has-fixed-layout, .entry-content .wp-block-table table.has-fixed-layout {
+  @apply table-fixed;
+}
+.editor-styles-wrapper .wp-block-table th, .entry-content .wp-block-table th {
+  @apply font-bold;
+}
+.editor-styles-wrapper .wp-block-table th, .editor-styles-wrapper .wp-block-table td, .entry-content .wp-block-table th, .entry-content .wp-block-table td {
+  @apply text-left border border-gray-200 p-4;
+}
+.editor-styles-wrapper .wp-block-table.is-style-stripes tr:nth-child(odd), .entry-content .wp-block-table.is-style-stripes tr:nth-child(odd) {
+  @apply odd:bg-gray-200;
+}
+.editor-styles-wrapper .wp-block-table.is-style-narrow-first-column td, .editor-styles-wrapper .wp-block-table.is-style-narrow-first-column th, .entry-content .wp-block-table.is-style-narrow-first-column td, .entry-content .wp-block-table.is-style-narrow-first-column th {
+  @apply first:w-[70px];
+}
+.editor-styles-wrapper table, .entry-content table {
+  @apply relative min-w-full whitespace-nowrap table-fixed md:table-fixed;
+}
+.editor-styles-wrapper .wp-block-columns, .entry-content .wp-block-columns {
+  @apply lg:flex lg:flex-nowrap space-y-6;
+}
+.editor-styles-wrapper .wp-block-column, .entry-content .wp-block-column {
+  @apply flex-grow basis-0;
+}
+.editor-styles-wrapper .wp-block-columns + .wp-block-columns, .entry-content .wp-block-columns + .wp-block-columns {
+  @apply mt-8;
+}
+.editor-styles-wrapper .wp-block-embed__wrapper, .entry-content .wp-block-embed__wrapper {
+  @apply relative w-full h-0 pb-[56.26%];
+}
+.editor-styles-wrapper .wp-block-embed__wrapper iframe, .entry-content .wp-block-embed__wrapper iframe {
+  @apply absolute w-full h-full left-0 top-0;
+}
+.editor-styles-wrapper blockquote, .entry-content blockquote {
+  @apply mb-4 bg-gray-100 rounded-sm py-6 px-4;
+}
+.editor-styles-wrapper blockquote cite, .entry-content blockquote cite {
+  @apply mt-2;
+}
+.editor-styles-wrapper pre, .entry-content pre {
+  @apply mb-6 last:mb-0 text-wrap;
+}
+
+@layer base {}
+@layer components {}
+@layer utilities {
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}

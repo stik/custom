@@ -1,0 +1,19 @@
+{
+    "name": "acf/team-member-grid",
+    "title": "Team Member Grid",
+    "description": "Display multiple team member profiles in a grid format.",
+    "category": "custom-block-category",
+    "icon": "groups",
+    "keywords": [
+        "team",
+        "member"
+    ],
+    "apiVersion": 2,
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "render.php"
+    },
+    "supports": {
+        "align": false
+    }
+}

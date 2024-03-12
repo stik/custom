@@ -1,0 +1,19 @@
+{
+    "name": "acf/team-member-detail",
+    "title": "Team Member Detail",
+    "description": "Show team member detail.",
+    "category": "custom-block-category",
+    "icon": "id-alt",
+    "keywords": [
+        "team",
+        "member"
+    ],
+    "apiVersion": 2,
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "render.php"
+    },
+    "supports": {
+        "align": false
+    }
+}

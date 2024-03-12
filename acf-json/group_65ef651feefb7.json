@@ -1,0 +1,124 @@
+{
+    "key": "group_65ef651feefb7",
+    "title": "Team member grid",
+    "fields": [
+        {
+            "key": "field_65ef66053f7c4",
+            "label": "Number of Columns",
+            "name": "number_of_columns",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "2": "2",
+                "3": "3",
+                "4": "4"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 1,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_65ef65203f7c1",
+            "label": "Show members",
+            "name": "show_members",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Přidat řádek",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_65ef65ad3f7c2",
+                    "label": "Member",
+                    "name": "member",
+                    "aria-label": "",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "team_members"
+                    ],
+                    "post_status": "",
+                    "taxonomy": "",
+                    "return_format": "id",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "bidirectional": 0,
+                    "ui": 1,
+                    "bidirectional_target": [],
+                    "parent_repeater": "field_65ef65203f7c1"
+                },
+                {
+                    "key": "field_65ef65cf3f7c3",
+                    "label": "Display Position",
+                    "name": "display_position",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 1,
+                    "ui_on_text": "",
+                    "ui_off_text": "",
+                    "ui": 1,
+                    "parent_repeater": "field_65ef65203f7c1"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/team-member-grid"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1710188224
+}

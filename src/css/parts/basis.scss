@@ -1,0 +1,11 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    @apply bg-white antialiased;
+}
+
+a {
+    @apply transition-all;
+}
