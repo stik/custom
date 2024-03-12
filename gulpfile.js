@@ -38,14 +38,6 @@ function jsTask(cb) {
     cb();
 }
 
-// Task for minifying images
-function imageminTask(cb) {
-    return src("./src/images/*")
-        .pipe(imagemin())
-        .pipe(dest("./dist/images"));
-    cb();
-}
-
 // Serve from browserSync server
 function browsersyncServe(cb) {
     browserSync.init({
@@ -72,4 +64,3 @@ function watchTask() {
 exports.default = series(cssTask, jsTask, browsersyncServe, watchTask);
 exports.css = cssTask;
 exports.js = jsTask;
-exports.images = imageminTask;
