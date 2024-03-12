@@ -38,7 +38,12 @@
     @apply text-[1.125rem] md:text-[1.25rem] leading-[1.35];
 }
 .link {
-    @apply underline text-primary hover:text-primary transition hover:no-underline group-hover:no-underline group-hover:text-primary;
+    @apply underline text-primary hover:text-primary transition hover:no-underline;
+}
+
+// Custom
+.navigation-link {
+    @apply text-sm uppercase font-semibold tracking-wider;
 }
 
 // Wysiwyg style

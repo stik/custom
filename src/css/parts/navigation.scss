@@ -1,0 +1,87 @@
+.desktop-menu{
+    li{
+        @apply relative;
+    }
+    & > ul{
+        @apply flex flex-row h-full;
+        & > li {
+            @apply flex justify-center items-center;
+            & > a{
+                @extend .navigation-link;
+                @apply h-full px-3 py-6 flex flex-row items-center;
+            }
+            &:hover{
+                > a{
+                    @apply text-gray-600;
+                }
+            }
+            &:last-child{
+                & > a{
+                    @apply pr-0;
+                }
+            }
+        }
+        & ul{
+            @apply invisible opacity-0 absolute left-0 top-full flex flex-col z-10 transition-all w-full bg-white shadow-sm;
+            a {
+                @extend .navigation-link;
+                @apply h-full p-3 flex flex-row items-center;
+            }
+        }
+        li.menu-item-has-children{
+            &:hover{
+                & > ul{
+                    @apply opacity-100 visible;
+                }
+                & > a > i{
+                    @apply rotate-180;
+                }
+            }
+        }
+    }
+    i.chevron-down {
+        @apply w-3 h-3 bg-no-repeat bg-center bg-contain transition-all ml-2;
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>');
+    }
+}
+
+.mobile-menu{
+    @apply bg-white absolute inset-0 w-full h-full flex justify-center invisible opacity-0 items-center transition-all z-40;
+    &.active{
+        @apply visible opacity-100;
+    }
+    a{
+        @extend .navigation-link;
+        @apply flex justify-start items-center;
+    }
+    .navbar-nav{
+        @apply flex flex-col justify-center items-center;
+        li {
+            @apply text-center w-full my-3;
+            &.menu-item-has-children{
+                & > ul{
+                    @apply pl-3 border-l-4 border-gray-100 flex flex-col gap-y-4 mt-4;
+                    li{
+                        @apply m-0;
+                    }
+                    a{
+                        @extend .navigation-link;
+                    }
+                }
+            }
+        }
+    }
+    &_toggler{
+        .navbar-toggler{
+            &.active{
+                @apply z-50;
+                span{
+                    @apply first-of-type:top-2 first-of-type:rotate-45 last-of-type:bottom-1.5 last-of-type:-rotate-45 even:opacity-0 even:invisible;
+                }
+            }
+        }
+    }
+}
+.active-mobile_menu{
+    @apply overflow-hidden md:overflow-auto;
+}

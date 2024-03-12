@@ -47,14 +47,14 @@ if ($member) {
 
 ?>
     <section id="<?php echo esc_attr($block_id); ?>" class="<?php echo esc_attr($block_classes); ?> member-detail my-8">
-        <div class="py-8 px-8 bg-gray-100 rounded-sm">
+        <div class="py-8 px-8 bg-gray-50 rounded-sm">
             <div class="flex flex-col sm:flex-row gap-8">
                 <div>
                     <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-gray-200">
                         <?php if ($profile_image) { ?>
                             <img src="<?php echo esc_url($profile_image['sizes']['medium']); ?>" alt="<?php echo esc_attr($profile_image['alt']); ?>" loading="lazy" class="object-cover !h-full w-full" />
                         <?php } else { ?>
-                            <div class="bg-gray-200 h-full w-full flex justify-center items-center text-7xl text-gray-300">?</div>
+                            <div class="bg-gray-200 h-full w-full flex justify-center items-center text-7xl text-white">?</div>
                         <?php } ?>
                     </div>
                 </div>

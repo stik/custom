@@ -10,7 +10,7 @@ body {
 }
 
 a {
-  @apply transition-all;
+  @apply transition-all outline-none;
 }
 
 .like-italic {
@@ -34,7 +34,11 @@ a {
 }
 
 .link, .editor-styles-wrapper p > a, .editor-styles-wrapper li > a, .editor-styles-wrapper .wp-block-table a, .editor-styles-wrapper p strong > a, .editor-styles-wrapper p b > a, .editor-styles-wrapper p i > a, .entry-content p > a, .entry-content li > a, .entry-content .wp-block-table a, .entry-content p strong > a, .entry-content p b > a, .entry-content p i > a, .editor-styles-wrapper h1 a, .editor-styles-wrapper h2 a, .editor-styles-wrapper h3 a, .editor-styles-wrapper h4 a, .editor-styles-wrapper h5 a, .editor-styles-wrapper h6 a, .entry-content h1 a, .entry-content h2 a, .entry-content h3 a, .entry-content h4 a, .entry-content h5 a, .entry-content h6 a {
-  @apply underline text-primary hover:text-primary transition hover:no-underline group-hover:no-underline group-hover:text-primary;
+  @apply underline text-primary hover:text-primary transition hover:no-underline;
+}
+
+.navigation-link, .mobile-menu .navbar-nav li.menu-item-has-children > ul a, .mobile-menu a, .desktop-menu > ul ul a, .desktop-menu > ul > li > a {
+  @apply text-sm uppercase font-semibold tracking-wider;
 }
 
 .editor-styles-wrapper h1, .editor-styles-wrapper h2, .editor-styles-wrapper h3, .editor-styles-wrapper h4, .editor-styles-wrapper h5, .editor-styles-wrapper h6, .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 {
@@ -227,6 +231,80 @@ a {
 }
 .editor-styles-wrapper .member-detail ul, .entry-content .member-detail ul {
   @apply list-none p-0;
+}
+
+.desktop-menu li {
+  @apply relative;
+}
+.desktop-menu > ul {
+  @apply flex flex-row h-full;
+}
+.desktop-menu > ul > li {
+  @apply flex justify-center items-center;
+}
+.desktop-menu > ul > li > a {
+  @apply h-full px-3 py-6 flex flex-row items-center;
+}
+.desktop-menu > ul > li:hover > a {
+  @apply text-gray-600;
+}
+.desktop-menu > ul > li:last-child > a {
+  @apply pr-0;
+}
+.desktop-menu > ul ul {
+  @apply invisible opacity-0 absolute left-0 top-full flex flex-col z-10 transition-all w-full bg-white shadow-sm;
+}
+.desktop-menu > ul ul a {
+  @apply h-full p-3 flex flex-row items-center;
+}
+.desktop-menu > ul li.menu-item-has-children:hover > ul {
+  @apply opacity-100 visible;
+}
+.desktop-menu > ul li.menu-item-has-children:hover > a > i {
+  @apply rotate-180;
+}
+.desktop-menu i.chevron-down {
+  @apply w-3 h-3 bg-no-repeat bg-center bg-contain transition-all ml-2;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>');
+}
+
+.mobile-menu {
+  @apply bg-white absolute inset-0 w-full h-full flex justify-center invisible opacity-0 items-center transition-all z-40;
+}
+.mobile-menu.active {
+  @apply visible opacity-100;
+}
+.mobile-menu a {
+  @apply flex justify-start items-center;
+}
+.mobile-menu .navbar-nav {
+  @apply flex flex-col justify-center items-center;
+}
+.mobile-menu .navbar-nav li {
+  @apply text-center w-full my-3;
+}
+.mobile-menu .navbar-nav li.menu-item-has-children > ul {
+  @apply pl-3 border-l-4 border-gray-100 flex flex-col gap-y-4 mt-4;
+}
+.mobile-menu .navbar-nav li.menu-item-has-children > ul li {
+  @apply m-0;
+}
+.mobile-menu_toggler .navbar-toggler.active {
+  @apply z-50;
+}
+.mobile-menu_toggler .navbar-toggler.active span {
+  @apply first-of-type:top-2 first-of-type:rotate-45 last-of-type:bottom-1.5 last-of-type:-rotate-45 even:opacity-0 even:invisible;
+}
+
+.active-mobile_menu {
+  @apply overflow-hidden md:overflow-auto;
+}
+
+.pagination .current {
+  @apply bg-gray-100;
+}
+.pagination .page-numbers {
+  @apply py-2 px-3 rounded-sm hover:bg-gray-100 transition-all;
 }
 
 @layer base {}

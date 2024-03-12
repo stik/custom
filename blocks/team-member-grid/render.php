@@ -35,26 +35,29 @@ if (count($list_of_members) > 0) {
     <section id="<?php echo esc_attr($block_id); ?>" class="<?php echo esc_attr($block_classes); ?>">
         <div class="<?php echo $block_grid; ?>">
             <?php foreach ($list_of_members as $lom) { ?>
-                <div class="flex items-center flex-col col-span-1 bg-gray-50 py-8 px-6 rounded-sm">
-                    <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-gray-200 mb-4">
-                        <?php if ($lom['profile_image']) { ?>
-                            <img src="<?php echo esc_url($lom['profile_image']['sizes']['medium']); ?>" alt="<?php echo esc_attr($lom['profile_image']['alt']); ?>" loading="lazy" class="object-cover !h-full w-full" />
-                        <?php } else { ?>
-                            <div class="bg-gray-200 h-full w-full flex justify-center items-center text-7xl text-gray-300">?</div>
+                <div class="col-span-1 relative bg-gray-50 py-8 px-6 rounded-sm transition-all overflow-hidden group">
+                    <div class="absolute bg-gray-100 rounded-full w-0 h-0 group-hover:w-[600px] group-hover:h-[600px] transition-all duration-700 -top-32 -left-32"></div>
+                    <div class="flex items-center flex-col z-10 relative">
+                        <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-gray-200 mb-4">
+                            <?php if ($lom['profile_image']) { ?>
+                                <img src="<?php echo esc_url($lom['profile_image']['sizes']['medium']); ?>" alt="<?php echo esc_attr($lom['profile_image']['alt']); ?>" loading="lazy" class="object-cover !h-full w-full" />
+                            <?php } else { ?>
+                                <div class="bg-gray-200 h-full w-full flex justify-center items-center text-7xl text-white">?</div>
+                            <?php } ?>
+                        </div>
+                        <h2 class="is-style-h3 !mb-2"><?php echo $lom['name']; ?></h2>
+                        <?php if ($lom['position']) { ?>
+                            <p class="is-style-h6 !mb-2 !mt-0">
+                                <?php echo esc_html($lom['position']); ?>
+                            </p>
+                        <?php } ?>
+                        <?php if ($lom['phone_number']) { ?>
+                            <div class="flex flex-row items-center">
+                                <img src="<?php echo get_template_directory_uri() . '/img/phone.svg'; ?>" alt="phone" class="w-4 h-4 mr-2" loading="lazy" />
+                                <a href="tel:<?php echo get_phone($lom['phone_number']); ?>" class="link"><?php echo esc_html($lom['phone_number']); ?></a>
+                            </div>
                         <?php } ?>
                     </div>
-                    <h2 class="is-style-h3 !mb-2"><?php echo $lom['name']; ?></h2>
-                    <?php if ($lom['position']) { ?>
-                        <p class="is-style-h6 !mb-2 !mt-0">
-                            <?php echo esc_html($lom['position']); ?>
-                        </p>
-                    <?php } ?>
-                    <?php if ($lom['phone_number']) { ?>
-                        <div class="flex flex-row items-center">
-                            <img src="<?php echo get_template_directory_uri() . '/img/phone.svg'; ?>" alt="phone" class="w-4 h-4 mr-2" loading="lazy" />
-                            <a href="tel:<?php echo get_phone($lom['phone_number']); ?>" class="link"><?php echo esc_html($lom['phone_number']); ?></a>
-                        </div>
-                    <?php } ?>
                 </div>
             <?php } ?>
         </div>

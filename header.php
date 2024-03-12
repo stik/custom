@@ -15,7 +15,9 @@
     <link rel="mask-icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon/safari-pinned-tab.svg" color="#000000">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
-
+    <?php echo get_field('scripts_in_head', 'option'); ?>
 </head>
 <body <?php body_class(); ?>>
+    <?php echo get_field('scripts_in_start_of_body', 'option'); ?>
     <div class="overflow-hidden">
+        <?php echo get_template_part('template-parts/navbar'); ?>
