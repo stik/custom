@@ -178,7 +178,7 @@ a {
   @apply w-full;
 }
 .editor-styles-wrapper .wp-block-table, .entry-content .wp-block-table {
-  @apply my-5 rounded-sm overflow-x-auto bg-gray-100 py-6 px-4 relative whitespace-nowrap;
+  @apply my-5 rounded-sm overflow-x-auto bg-gray-50 py-8 px-8 relative whitespace-nowrap;
 }
 .editor-styles-wrapper .wp-block-table figcaption, .entry-content .wp-block-table figcaption {
   @apply md:hidden;
@@ -217,13 +217,16 @@ a {
   @apply absolute w-full h-full left-0 top-0;
 }
 .editor-styles-wrapper blockquote, .entry-content blockquote {
-  @apply mb-4 bg-gray-100 rounded-sm py-6 px-4;
+  @apply mb-4 bg-gray-50 rounded-sm py-6 px-4;
 }
 .editor-styles-wrapper blockquote cite, .entry-content blockquote cite {
   @apply mt-2;
 }
 .editor-styles-wrapper pre, .entry-content pre {
   @apply mb-6 last:mb-0 text-wrap;
+}
+.editor-styles-wrapper .member-detail ul, .entry-content .member-detail ul {
+  @apply list-none p-0;
 }
 
 @layer base {}

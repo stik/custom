@@ -8,7 +8,7 @@ $block_grid = 'grid grid-cols-2 sm:gap-x-8 gap-y-8';
 
 $number_of_columns = get_field('number_of_columns');
 if ($number_of_columns == 2) $block_grid = 'grid grid-cols-1 sm:grid-cols-2 sm:gap-x-8 gap-y-8';
-if ($number_of_columns == 3) $block_grid = 'grid grid-cols-1 sm:grid-cols-3 sm:gap-x-8 gap-y-8';
+if ($number_of_columns == 3) $block_grid = 'grid grid-cols-1 md:grid-cols-3 sm:gap-x-8 gap-y-8';
 if ($number_of_columns == 4) $block_grid = 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 sm:gap-x-8 gap-y-8';
 
 //members
@@ -35,17 +35,17 @@ if (count($list_of_members) > 0) {
     <section id="<?php echo esc_attr($block_id); ?>" class="<?php echo esc_attr($block_classes); ?>">
         <div class="<?php echo $block_grid; ?>">
             <?php foreach ($list_of_members as $lom) { ?>
-                <div class="flex items-center flex-col col-span-1">
+                <div class="flex items-center flex-col col-span-1 bg-gray-50 py-8 px-6 rounded-sm">
                     <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-gray-200 mb-4">
                         <?php if ($lom['profile_image']) { ?>
                             <img src="<?php echo esc_url($lom['profile_image']['sizes']['medium']); ?>" alt="<?php echo esc_attr($lom['profile_image']['alt']); ?>" loading="lazy" class="object-cover !h-full w-full" />
                         <?php } else { ?>
-                            <div class="bg-gray-200 h-full w-full"></div>
+                            <div class="bg-gray-200 h-full w-full flex justify-center items-center text-7xl text-gray-300">?</div>
                         <?php } ?>
                     </div>
                     <h2 class="is-style-h3 !mb-2"><?php echo $lom['name']; ?></h2>
                     <?php if ($lom['position']) { ?>
-                        <p class="is-style-h6 !mb-2">
+                        <p class="is-style-h6 !mb-2 !mt-0">
                             <?php echo esc_html($lom['position']); ?>
                         </p>
                     <?php } ?>
