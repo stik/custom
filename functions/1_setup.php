@@ -193,38 +193,3 @@ if (!is_admin()) {
     }
     add_filter('script_loader_tag', 'add_asyncdefer_attribute', 10, 2);
 }
-
-
-// add menu link class
-/*
-'list_item_class'  => 'nav-item',
-'link_class'       => 'nav-link m-2 menu-item nav-active'
-*/
-function add_menu_link_class($atts, $item, $args)
-{
-    if (property_exists($args, 'link_class')) {
-        $atts['class'] = $args->link_class;
-    }
-    return $atts;
-}
-add_filter('nav_menu_link_attributes', 'add_menu_link_class', 1, 3);
-
-function add_menu_list_item_class($classes, $item, $args)
-{
-    if (property_exists($args, 'list_item_class')) {
-        $classes[] = $args->list_item_class;
-    }
-    return $classes;
-}
-add_filter('nav_menu_css_class', 'add_menu_list_item_class', 1, 3);
-
-
-// disable update plugin / core / theme
-function remove_core_updates()
-{
-    global $wp_version;
-    return (object) array('last_checked' => time(), 'version_checked' => $wp_version);
-}
-//add_filter('pre_site_transient_update_core','remove_core_updates'); //hide updates for WordPress itself
-//add_filter('pre_site_transient_update_plugins','remove_core_updates'); //hide updates for all plugins
-//add_filter('pre_site_transient_update_themes','remove_core_updates'); //hide updates for all themes
